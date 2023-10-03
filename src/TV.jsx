@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "./UseFetch";
-
 const TV = () => {
   const { id } = useParams();
   const [tvData, setTvData] = useState(null);
