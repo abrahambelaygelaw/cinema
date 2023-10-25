@@ -1,5 +1,4 @@
 import React from "react";
-
 const Header = () => {
   const show = (id) => {
     document.getElementById(id).style.display = "block";
@@ -11,7 +10,8 @@ const Header = () => {
     <div className="w-screen bg-blue-500">
       <div className="max-w-screen-2xl m-auto flex justify-between h-12">
         <h1 className="text-5xl font-mono font-bold">CINEMA</h1>
-        <div className="flex mt-3 mx-4 z-10">
+
+        <div className="hidden md:flex mt-3 mx-4 z-10">
           <div
             className="w-32"
             onMouseLeave={() => {
