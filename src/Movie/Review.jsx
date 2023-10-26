@@ -18,7 +18,10 @@ const Review = ({ id }) => {
       <div className="">
         {reviews.length > 0 &&
           reviews.slice(0, Math.min(2, reviews.length)).map((item) => (
-            <div className="flex max-w-screen-2xl m-auto p-10  drop-shadow-xl border border-solid border-inherit rounded-3xl my-10 gap-5">
+            <div
+              key={item.id}
+              className="flex max-w-screen-2xl m-auto p-10  drop-shadow-xl border border-solid border-inherit rounded-3xl my-10 gap-5"
+            >
               <div className=" min-w-fit">
                 <img
                   className="w-12 h-12 rounded-full"

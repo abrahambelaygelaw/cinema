@@ -44,7 +44,7 @@ const router = createBrowserRouter(
 );
 const App = () => {
   return (
-    <div className=" m-auto  overflow-hidden">
+    <div className=" m-auto  overflow-hidden mb-5">
       <Header />
       <RouterProvider router={router} />
     </div>
