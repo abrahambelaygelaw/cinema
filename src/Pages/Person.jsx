@@ -24,7 +24,7 @@ const Person = () => {
         <div className="flex-shrink-0 flex m-5 md:flex-col ">
           <img
             src={image + personData.profile_path}
-            className="md:w-72 w-60 rounded-lg"
+            className="md:w-72 w-40 object-cover h-auto rounded-lg"
             alt=""
           />
           <div className="mx-3  max-w-[250px] ">

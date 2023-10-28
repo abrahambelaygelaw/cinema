@@ -17,7 +17,7 @@ const TvResults = () => {
   }, [data]);
 
   return result.length !== 0 ? (
-    <div className="flex-1">
+    <div className="">
       <h2 className="m-5 font-bold"> Results for {query} in tv shows</h2>
       {result &&
         result.map((item) => (

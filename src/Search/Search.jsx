@@ -34,7 +34,7 @@ const Search = () => {
           Movies
         </NavLink>
       </div>
-      <div className="m-6 rounded-xl border shadow hidden md:block h-fit">
+      <div className="m-6 min-w-fit rounded-xl border shadow hidden md:block h-fit">
         <h1 className="py-3 text-white px-12 text-lg font-medium  bg-slate-600 rounded-t-xl">
           Search Results
         </h1>
