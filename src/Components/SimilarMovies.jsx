@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Movies from "../Movies";
+import Movies from "./Movies";
 import useFetch from "../UseFetch";
 import { apikey, URL } from "../Constants";
 
-const SimilarMovies = ({ id }) => {
+const SimilarMovies = ({ id, type }) => {
   const [movies, setMovies] = useState(null);
   const { data } = useFetch(
-    `${URL}movie/${id}/similar?api_key=${apikey}&language=en-US&page=1`
+    `${URL + type}/${id}/similar?api_key=${apikey}&language=en-US&page=1`
   );
 
   useEffect(() => {
@@ -14,7 +14,11 @@ const SimilarMovies = ({ id }) => {
       setMovies(data.results);
     }
   }, [data]);
-  return <Movies moviesList={movies} title="You May Also Like" />;
+  return (
+    movies && (
+      <Movies moviesList={movies} title="You May Also Like" type={type} />
+    )
+  );
 };
 
 export default SimilarMovies;

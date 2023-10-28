@@ -1,18 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../UseFetch";
-import ReadMore from "./ReadMore";
-import KnownFor from "./KnownFor";
+import ReadMore from "../Components/ReadMore";
+import KnownFor from "../Components/KnownFor";
+import { URL, apikey } from "../Constants";
 
 const Person = () => {
   const { id } = useParams();
-  const url = `https://api.themoviedb.org/3/person/${id}?api_key=2b061481ea9265b28385f24c7f0b5125&language=en-US`;
+  const url = `${URL}person/${id}?api_key=${apikey}&language=en-US`;
   const { data } = useFetch(url);
   const [personData, setPersonData] = useState(null);
   if (data) {
     if (personData === null) setPersonData(data);
     console.log(personData);
   }
+  useEffect(() => {
+    document.title = personData ? personData.name : "Loading";
+  }, [personData]);
+
   const image = "https://image.tmdb.org/t/p/w400";
   return (
     personData && (
@@ -23,7 +28,7 @@ const Person = () => {
             className="w-72 rounded-lg"
             alt=""
           />
-          <div className="mx-3">
+          <div className="mx-3  max-w-[250px] ">
             <h1 className="font-bold text-xl mt-3">Personal Info</h1>
             <div className="mt-3">
               <h2 className="text-lg font-semibold">Known for</h2>
@@ -49,7 +54,11 @@ const Person = () => {
           <h1 className="text-2xl mt-5 font-bold text-gray-800">
             {personData.name}
           </h1>
-          <ReadMore text={personData.biography} />
+          <div>
+            <h2 className="font-semibold mt-5">Biography</h2>
+
+            <ReadMore text={personData.biography} />
+          </div>
           <KnownFor />
         </div>
       </div>

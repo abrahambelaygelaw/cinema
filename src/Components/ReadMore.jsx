@@ -7,7 +7,6 @@ const ReadMore = ({ text }) => {
   };
   return (
     <div>
-      <h2 className="font-semibold mt-5">Biography</h2>
       <p
         className={`whitespace-pre-wrap ${
           expanded ? "overflow-auto" : "overflow-hidden"
