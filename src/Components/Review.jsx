@@ -11,7 +11,6 @@ const Review = ({ id, type }) => {
   useEffect(() => {
     if (data) {
       setReviews(data.results);
-      console.log(data);
     }
   }, [data]);
 

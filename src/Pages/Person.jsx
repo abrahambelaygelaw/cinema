@@ -12,7 +12,6 @@ const Person = () => {
   const [personData, setPersonData] = useState(null);
   if (data) {
     if (personData === null) setPersonData(data);
-    console.log(personData);
   }
   useEffect(() => {
     document.title = personData ? personData.name : "Loading";

@@ -19,7 +19,7 @@ const Header = () => {
   };
   return (
     <>
-      <div className="w-full  ">
+      <div className="w-full fixed bg-white z-50">
         <div className="md:m-auto mx-3 max-w-screen-2xl flex justify-between h-12   items-center ">
           <h1
             className="text-5xl  font-bold mx-3 cursor-pointer"

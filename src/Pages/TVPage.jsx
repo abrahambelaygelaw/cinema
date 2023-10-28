@@ -5,16 +5,19 @@ import CircularPercent from "../Components/CirularPercent";
 import Cast from "../Components/Cast";
 import Review from "../Components/Review";
 import SimilarMovies from "../Components/SimilarMovies";
-import { apikey } from "../Constants";
+import { URL, apikey, image500 } from "../Constants";
 const TV = () => {
   const { id } = useParams();
-  const [tvData, setTvData] = useState(null);
-  const image = "https://image.tmdb.org/t/p/w500";
-  const { data } = useFetch(`${apikey}tv/${id}&language=en-US`);
+  const [tvData, setTvData] = useState();
+  const { data } = useFetch(`${URL}tv/${id}?api_key=${apikey}&language=en-US`);
+
   useEffect(() => {
     if (data) {
       setTvData(data);
-      console.log(data);
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     }
   }, [data]);
   useEffect(() => {
@@ -25,14 +28,14 @@ const TV = () => {
       {tvData && (
         <div
           style={{
-            backgroundImage: `url(${image + tvData.backdrop_path})`,
+            backgroundImage: `url(${image500 + tvData.backdrop_path})`,
           }}
-          className="bg-cover relative"
+          className="bg-cover relative mt-12"
         >
           <div className="bg-black bg-opacity-60">
             <div className=" flex flex-col md:flex-row max-w-screen-2xl 2xl:m-auto mx-3  text-white py-6 ">
               <div className="md:flex-shrink-0 flex justify-center">
-                <img src={image + tvData.poster_path} className=" w-96" />
+                <img src={image500 + tvData.poster_path} className=" w-96" />
               </div>
               <div className="m-7">
                 <h1 className="text-2xl font-bold">{tvData.original_name}</h1>
@@ -67,7 +70,7 @@ const TV = () => {
                 <div className="flex justify-between max-w-screen-sm my-5">
                   {tvData.created_by &&
                     tvData.created_by.map((creater) => (
-                      <div>
+                      <div key={creater.id}>
                         <h1 className="font-semibold ">{creater.name}</h1>
                         <h1 className=" ">Creater</h1>
                       </div>

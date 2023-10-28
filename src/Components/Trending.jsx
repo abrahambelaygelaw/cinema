@@ -16,7 +16,7 @@ const Trending = ({ type, image_path, title, link }) => {
         <h1 className="text-xl font-bold">{title}</h1>
         <div className="flex overflow-scroll gap-3  mt-5 scrollbar ">
           {items?.map((item) => (
-            <div id={item.id} className="min-w-fit ">
+            <div key={item.id} className="min-w-fit ">
               <img
                 src={image200 + item[image_path]}
                 className="w-40 rounded-xl mb-2"

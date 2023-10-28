@@ -32,7 +32,7 @@ const Movie = () => {
           style={{
             backgroundImage: `url(${image500 + movieData.backdrop_path})`,
           }}
-          className="bg-cover relative"
+          className="bg-cover relative mt-12"
         >
           <div className=" bg-black bg-opacity-60">
             <div className=" flex flex-col md:flex-row max-w-screen-2xl 2xl:m-auto mx-3  text-white py-6 ">

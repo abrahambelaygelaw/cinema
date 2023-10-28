@@ -11,7 +11,6 @@ const KnownFor = () => {
   if (data) {
     if (moviesList === null) {
       setMovieList(data.cast);
-      console.log(moviesList);
     }
   }
   return (

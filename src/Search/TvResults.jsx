@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from "react";
 import useFetch from "../UseFetch";
-import { image200 } from "../Constants";
+import { URL, apikey, image200 } from "../Constants";
 import { useNavigate, useParams } from "react-router-dom";
 import NoResults from "../Components/NoResults";
 
 const TvResults = () => {
   const { query } = useParams();
-  const url = `https://api.themoviedb.org/3/search/tv?api_key=2b061481ea9265b28385f24c7f0b5125&language=en-US&query=${query}&page=1&include_adult=false`;
+  const url = `${URL}search/tv?api_key=${apikey}&language=en-US&query=${query}&page=1&include_adult=false`;
   const { data } = useFetch(url);
   const navigate = useNavigate();
   const [result, setResult] = useState([]);
   useEffect(() => {
     if (data) {
       setResult(data.results);
-      console.log(data.results);
     }
   }, [data]);
 
@@ -22,7 +21,7 @@ const TvResults = () => {
       <h2 className="m-5 font-bold"> Results for {query} in tv shows</h2>
       {result &&
         result.map((item) => (
-          <div className="h-40 flex rounded-md border  m-5">
+          <div key={item.id} className="h-40 flex rounded-md border  m-5">
             <img
               className="h-full rounded-tl-md shadow rounded-bl-md"
               src={image200 + item.poster_path}

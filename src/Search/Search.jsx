@@ -13,7 +13,7 @@ const Search = () => {
     document.title = query;
   }, [query]);
   return (
-    <div className="md:flex-row flex-col flex max-w-screen-2xl m-auto pr-10">
+    <div className="md:flex-row flex-col flex max-w-screen-2xl m-auto pr-10 mt-12">
       <div className="mx-5 justify-evenly w-full md:hidden flex border shadow rounded-lg bg-slate-600 text-white">
         <NavLink
           className="font-medium m-1 cursor-pointer"

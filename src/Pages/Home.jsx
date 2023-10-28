@@ -24,7 +24,7 @@ const Home = () => {
   };
   return (
     <>
-      <div className="m-auto max-w-screen-2xl">
+      <div className="m-auto max-w-screen-2xl mt-12">
         <div
           className="text-white  "
           style={{
