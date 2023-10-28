@@ -12,7 +12,7 @@ const Trending = ({ type, image_path, title, link }) => {
   }
   return (
     items && (
-      <div className="mx-3 md:mx-auto">
+      <div className="mx-3 2xl:mx-auto">
         <h1 className="text-xl font-bold">{title}</h1>
         <div className="flex overflow-scroll gap-3  mt-5 scrollbar ">
           {items?.map((item) => (
