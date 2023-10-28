@@ -20,11 +20,11 @@ const Person = () => {
   const image = "https://image.tmdb.org/t/p/w400";
   return (
     personData && (
-      <div className=" max-w-screen-2xl  m-auto flex flex-col md:flex-row">
-        <div className="flex-shrink-0 m-5 flex md:flex-col">
+      <div className=" max-w-screen-2xl  m-auto flex flex-col md:flex-row mt-12">
+        <div className="flex-shrink-0 flex m-5 md:flex-col ">
           <img
             src={image + personData.profile_path}
-            className="w-72 rounded-lg"
+            className="md:w-72 w-60 rounded-lg"
             alt=""
           />
           <div className="mx-3  max-w-[250px] ">

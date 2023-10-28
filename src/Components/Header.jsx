@@ -21,14 +21,22 @@ const Header = () => {
     <>
       <div className="w-full fixed bg-white z-50">
         <div className="md:m-auto mx-3 max-w-screen-2xl flex justify-between h-12   items-center ">
-          <h1
-            className="text-5xl  font-bold mx-3 cursor-pointer"
+          <h2
+            src="../../cinema.svg"
+            className="text-5xl font-bold mx-3 cursor-pointer md:block hidden font"
             onClick={() => {
               navigate("/");
             }}
           >
             watchIt
-          </h1>
+          </h2>
+          <img
+            src="../../cinema.svg"
+            className="md:hidden text-5xl w-10 font-bold mx-3 cursor-pointer"
+            onClick={() => {
+              navigate("/");
+            }}
+          />
           <div className="relative mx-auto flex-1 ">
             <input
               type="text"
