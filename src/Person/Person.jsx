@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import useFetch from "./UseFetch";
+import useFetch from "../UseFetch";
 
 const Person = () => {
   const { id } = useParams();
@@ -12,10 +12,12 @@ const Person = () => {
   }
   const image = "https://image.tmdb.org/t/p/w200";
   return (
-    <div>
-      {personData && (
-        <img src={image + personData.profile_path} className="w-64" alt="" />
-      )}
+    <div className="max-w-2xl m-3 flex">
+      <div>
+        {personData && (
+          <img src={image + personData.profile_path} className="w-72" alt="" />
+        )}
+      </div>
     </div>
   );
 };

@@ -7,7 +7,7 @@ import {
 import MoviesPage from "./Movies/MoviesPage";
 import Movie from "./Movie/Movie";
 import Home from "./Home";
-import Person from "./Person";
+import Person from "./Person/Person";
 import TV from "./TV";
 import Search from "./Search/Search";
 import Header from "./Header";
