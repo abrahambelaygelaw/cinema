@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import useFetch from "../UseFetch";
 import ReadMore from "../Components/ReadMore";
-import KnownFor from "../Components/KnownFor";
+import MovieCredits from "../Components/MovieCredits";
+import TvCredits from "../Components/TvCredits";
 import { URL, apikey } from "../Constants";
 
 const Person = () => {
@@ -58,7 +59,8 @@ const Person = () => {
 
             <ReadMore text={personData.biography} />
           </div>
-          <KnownFor />
+          <MovieCredits />
+          <TvCredits />
         </div>
       </div>
     )

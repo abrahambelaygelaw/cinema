@@ -21,8 +21,11 @@ const Cast = ({ id, type }) => {
         <div className="flex overflow-scroll scrollbar gap-5 ">
           {castList?.map((item) => (
             <div
+              onClick={() => {
+                navigate(`/people/${item.id}`);
+              }}
               key={item.id}
-              className="min-w-fit rounded-lg drop-shadow-xl border border-solid border-inherit"
+              className="min-w-fit rounded-lg drop-shadow-xl border border-solid border-inherit cursor-pointer"
             >
               <img
                 src={image200 + item.profile_path}
@@ -30,14 +33,7 @@ const Cast = ({ id, type }) => {
                 className="w-40 rounded-t-lg mb-1"
               />
               <div className="w-40 px-2 mb-1 text-sm">
-                <p
-                  className=" font-medium cursor-pointer"
-                  onClick={() => {
-                    navigate(`/people/${item.id}`);
-                  }}
-                >
-                  {item.original_name}
-                </p>
+                <p className=" font-medium ">{item.original_name}</p>
                 <p className="">
                   {item.character ? item.character : item.department}
                 </p>

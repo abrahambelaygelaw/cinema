@@ -1,11 +1,5 @@
 import React, { useEffect } from "react";
-import {
-  Link,
-  NavLink,
-  Outlet,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
+import { NavLink, Outlet, useParams } from "react-router-dom";
 
 const Search = () => {
   const { query } = useParams();
@@ -17,10 +11,11 @@ const Search = () => {
       <div className="mx-5 justify-evenly w-full md:hidden flex border shadow rounded-lg bg-slate-600 text-white">
         <NavLink
           className="font-medium m-1 cursor-pointer"
-          to={`/search/people/${query}`}
+          to={`/search/movie/${query}`}
         >
-          People
+          Movies
         </NavLink>
+
         <NavLink
           className="font-medium m-1 cursor-pointer"
           to={`/search/tv/${query}`}
@@ -29,9 +24,9 @@ const Search = () => {
         </NavLink>
         <NavLink
           className="font-medium m-1 cursor-pointer"
-          to={`/search/movie/${query}`}
+          to={`/search/people/${query}`}
         >
-          Movies
+          People
         </NavLink>
       </div>
       <div className="m-6 min-w-fit rounded-xl border shadow hidden md:block h-fit">
@@ -41,10 +36,11 @@ const Search = () => {
         <div className="flex flex-col border-t-4 border-solid border-white p-4">
           <NavLink
             className="font-medium m-1 cursor-pointer"
-            to={`/search/people/${query}`}
+            to={`/search/movie/${query}`}
           >
-            People
+            Movies
           </NavLink>
+
           <NavLink
             className="font-medium m-1 cursor-pointer"
             to={`/search/tv/${query}`}
@@ -53,9 +49,9 @@ const Search = () => {
           </NavLink>
           <NavLink
             className="font-medium m-1 cursor-pointer"
-            to={`/search/movie/${query}`}
+            to={`/search/people/${query}`}
           >
-            Movies
+            People
           </NavLink>
         </div>
       </div>

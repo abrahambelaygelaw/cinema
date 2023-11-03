@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useEffect } from "react";
+import { Context } from "../Context";
+
 import Trending from "../Components/Trending";
-import Header from "../Components/Header";
 import { useNavigate } from "react-router-dom";
 const Home = () => {
-  const [query, setQuery] = useState();
+  const { query, setQuery } = useContext(Context);
   const navigate = useNavigate();
   useEffect(() => {
     document.title = "Watchit";
@@ -41,7 +42,7 @@ const Home = () => {
                 type="text"
                 placeholder="Search"
                 onChange={(e) => {
-                  setQuery((prev) => e.target.value);
+                  setQuery(e.target.value);
                 }}
                 className="w-full rounded-3xl text-black text-xl my-5 align-middle px-5 py-2 "
               />

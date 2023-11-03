@@ -18,8 +18,11 @@ const Trending = ({ type, image_path, title, link }) => {
           {items?.map((item) => (
             <div key={item.id} className="min-w-fit ">
               <img
+                onClick={() => {
+                  navigate(`/${link}/${item.id}`);
+                }}
                 src={image200 + item[image_path]}
-                className="w-40 rounded-xl mb-2"
+                className="w-40 rounded-xl mb-2 cursor-pointer"
               />
               <div className=" w-40">
                 <h4

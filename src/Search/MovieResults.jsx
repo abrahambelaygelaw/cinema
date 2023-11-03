@@ -37,7 +37,7 @@ const MovieResults = () => {
                 {item.title}
               </h2>
               <h4 className="mb-2">{item.release_date.slice(0, 4)}</h4>
-              <p className=" overflow-hidden whitespace-pre-wrap" style={{}}>
+              <p className=" overflow-hidden whitespace-pre-wrap truncate line-clamp-3">
                 {item.overview}
               </p>
             </div>

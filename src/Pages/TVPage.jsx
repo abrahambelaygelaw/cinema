@@ -35,7 +35,10 @@ const TV = () => {
           <div className="bg-black bg-opacity-60">
             <div className=" flex flex-col md:flex-row max-w-screen-2xl 2xl:m-auto mx-3  text-white py-6 ">
               <div className="md:flex-shrink-0 flex justify-center">
-                <img src={image500 + tvData.poster_path} className=" w-96" />
+                <img
+                  src={image500 + tvData.poster_path}
+                  className="w-48 md:w-96"
+                />
               </div>
               <div className="m-7">
                 <h1 className="text-2xl font-bold">{tvData.original_name}</h1>

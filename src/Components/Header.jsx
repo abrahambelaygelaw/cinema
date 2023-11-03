@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Outlet, useNavigate } from "react-router-dom";
+import React, { useEffect, useContext } from "react";
+import { Outlet, useNavigate, useParams } from "react-router-dom";
+import { Context } from "../Context";
 const Header = () => {
   const navigate = useNavigate();
-  const [query, setQuery] = useState();
+  const { query, setQuery } = useContext(Context);
   const handleSearch = () => {
     if (query) {
       navigate(`/search/movie/${query.toLowerCase().replace(/\s/g, "-")}`);
@@ -40,6 +41,7 @@ const Header = () => {
           <div className="relative mx-auto flex-1 ">
             <input
               type="text"
+              value={query}
               className="w-full px-4 py-1 text-gray-900 bg-white border-b-blue-500 border-b-2 focus:outline-none "
               placeholder="search"
               onChange={(e) => {

@@ -36,7 +36,7 @@ const TvResults = () => {
               >
                 {item.name}
               </h2>
-              <p className=" overflow-hidden whitespace-pre-wrap" style={{}}>
+              <p className=" overflow-hidden whitespace-pre-wrap truncate line-clamp-2">
                 {item.overview}
               </p>
             </div>

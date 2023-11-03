@@ -2,27 +2,20 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   Route,
-  Router,
   RouterProvider,
 } from "react-router-dom";
-<<<<<<< HEAD
-import MoviesPage from "./Movies/MoviesPage";
-import Movie from "./Movie/Movie";
-import Home from "./Home";
-import Person from "./Person/Person";
-import TV from "./TV";
-=======
 import Movie from "./Pages/Movie";
 import Home from "./Pages/Home";
 import Person from "./Pages/Person";
 import TV from "./Pages/TVPage";
->>>>>>> f040020c9c18085a4f94e29abb8ac313361d61f1
 import Search from "./Search/Search";
 import Header from "./Components/Header";
 import MovieResults from "./Search/MovieResults";
 import TvResults from "./Search/TvResults";
 import PeopleResults from "./Search/PeopleResults";
 import NotFoundPage from "./Pages/NotFoundPage";
+import { Context } from "./Context";
+import { useState } from "react";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -44,10 +37,14 @@ const router = createBrowserRouter(
   )
 );
 const App = () => {
+  const [query, setQuery] = useState();
+
   return (
-    <div className=" m-auto  overflow-hidden mb-5">
-      <RouterProvider router={router} />
-    </div>
+    <Context.Provider value={{ query, setQuery }}>
+      <div className=" m-auto  overflow-hidden mb-5">
+        <RouterProvider router={router} />
+      </div>
+    </Context.Provider>
   );
 };
 
