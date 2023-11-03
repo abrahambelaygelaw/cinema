@@ -2,18 +2,17 @@ import React, { useEffect, useState } from "react";
 import useFetch from "../UseFetch";
 import { useNavigate, useParams } from "react-router-dom";
 import NoResults from "../Components/NoResults";
-import { image200 } from "../Constants";
+import { URL, apikey, image200 } from "../Constants";
 
 const PeopleResult = () => {
   const { query } = useParams();
-  const url = `https://api.themoviedb.org/3/search/person?api_key=2b061481ea9265b28385f24c7f0b5125&language=en-US&query=${query}&page=1`;
+  const url = `${URL}search/person?api_key=${apikey}&language=en-US&query=${query}&page=1`;
   const { data } = useFetch(url);
   const navigate = useNavigate();
   const [PeopleResult, setPeopleResult] = useState(null);
   useEffect(() => {
     if (data) {
       setPeopleResult(data.results);
-      console.log(data.results);
     }
   }, [data]);
 

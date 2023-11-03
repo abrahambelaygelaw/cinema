@@ -6,7 +6,6 @@ import Cast from "../Components/Cast";
 import SimilarMovies from "../Components/SimilarMovies";
 import Review from "../Components/Review";
 import CircularPercent from "../Components/CirularPercent";
-import NoResults from "../Components/NoResults";
 
 const Movie = () => {
   const { id } = useParams();

@@ -20,7 +20,7 @@ const Header = () => {
   };
   return (
     <>
-      <div className="w-full fixed bg-white z-50">
+      <div className="w-full fixed bg-white z-40">
         <div className="md:m-auto mx-3 max-w-screen-2xl flex justify-between h-12   items-center ">
           <h2
             src="../../cinema.svg"
